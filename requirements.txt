@@ -1,0 +1,5 @@
+selenium
+webdriver_manager
+python-dotenv
+spotipy
+pandas
