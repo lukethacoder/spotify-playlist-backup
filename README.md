@@ -41,25 +41,27 @@ Before your Github Action will run successfully, you must setup the above `.env`
 
 ![](./docs/github-actions-secrets-setup.jpg)
 
+Once setup, you can manually run the job via the `Actions` tab.
+
 ### Automated CRON Job
 
 By default, the CRON Job Github Action is disabled. To enable this within your repo, open the `.github/workflows/python-app.yml` file and uncomment the schedule code block.
 
 ```yaml
-# on:
-#   schedule:
-#     - cron: '0 3 * * 2'
-#   workflow_dispatch:
-#     inputs:
-#       logLevel:
-#         description: 'Log level'
-#         required: true
-#         default: 'warning' 
-#         type: choice
-#         options:
-#         - info
-#         - warning
-#         - debug 
+on:
+  # schedule:
+  #   - cron: '0 3 * * 2'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
 ```
 
 > You can use the [crontab](https://crontab.guru/) tool to calculate when and how often you want to run the Github Action.
