@@ -3,20 +3,20 @@
 
 name: Spotify Playlist Backup
 
-# on:
-#   schedule:
-#     - cron: '0 3 * * 2'
-#   workflow_dispatch:
-#     inputs:
-#       logLevel:
-#         description: 'Log level'
-#         required: true
-#         default: 'warning' 
-#         type: choice
-#         options:
-#         - info
-#         - warning
-#         - debug 
+on:
+  # schedule:
+  #   - cron: '0 3 * * 2'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
     
 
 permissions:
