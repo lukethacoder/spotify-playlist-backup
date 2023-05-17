@@ -140,7 +140,7 @@ def transform_tracks(tracks_data):
     transformed_track['added_at'] = track['added_at']
     transformed_track['added_by_id'] = track['added_by']['id']
 
-    transformed_track['id'] = the_track['id'] or 'null'
+    transformed_track['id'] = the_track['id'] if 'id' in the_track else 'null'
     transformed_track['name'] = the_track['name']
     transformed_track['artists'] = get_artists_data(the_track['artists']) if 'artists' in the_track else []
     transformed_track['duration'] = the_track['duration_ms']
